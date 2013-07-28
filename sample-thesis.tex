@@ -1,0 +1,69 @@
+\documentclass[ms,pdftex,final]{pittetd}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{loe}
+\usewithpatch{graphics}
+\usewithpatch[chapter]{graphicx}
+\usepackage{subfigure}
+\usewithpatch{amsmath,amsthm}
+\patch{pitthesis}
+
+\graphicspath{{results/oct/}}
+\newtheorem*{theorem}{Theorem}
+
+\title{Sample MSc Thesis}
+\year{2013}
+\author{Sample C.S. Student}
+\school{Department of Computer Science}
+\date{January 1, 2013}
+\degree{Master of Science}
+\previousdegree{B.S. in Computer Science, Your Undergrad, 2008}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\counterwithin{equation}{section}
+\counterwithin{algorithm}{section}
+\begin{document}
+
+\maketitle
+
+\committeemember{Your Advisor, Your Advisor's Title\\
+Your Co-Advisor or Second Committee Member, Title}
+\committeemember{Third Committee Member, Title, Institution}
+
+\makecommittee
+
+%\input{abstract}
+
+\tableofcontents
+
+\listoftables
+
+\listoffigures
+
+\listofequations
+
+\listofalgorithms
+
+%\input{preface}
+
+\chapter{Introduction}
+% Label everything!
+\label{sec:intro}
+% I like to put each chapter/section into its own file...
+%\input{intro}
+
+\chapter{Second Chapter}
+
+\chapter{Third Chapter}
+
+\chapter{Fourth Chapter}
+
+\chapter{Conclusions and Future Work}
+\label{sec:conclusion}
+%\input{conclusion}
+
+\bibliographystyle{plain}
+\safebibliography{sample-thesis}
+\end{document}

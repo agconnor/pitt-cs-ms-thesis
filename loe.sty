@@ -1,0 +1,22 @@
+
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{loe}
+   [2009/08/24 v0.1 Document Style `loe']
+\RequirePackage{amsmath}
+
+\newcounter{@masterEqNum}
+\setcounter{@masterEqNum}{0}
+
+
+\renewenvironment{equation}[1][Equation (\theequation)]{%
+  \incr@eqnum
+  \addtocounter{@masterEqNum}{1}
+  \addcontentsline{loe}{equation}{\protect\numberline {\theequation} {#1}}
+  \mathdisplay@push
+  \st@rredfalse \global\@eqnswtrue
+  \mathdisplay{equation}%
+}{%
+  \endmathdisplay{equation}%
+  \mathdisplay@pop
+  \ignorespacesafterend
+}
